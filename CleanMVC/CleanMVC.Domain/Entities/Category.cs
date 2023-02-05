@@ -5,18 +5,19 @@ namespace CleanMVC.Domain.Entities
     public sealed class Category : BaseEntity
     {
         public string Name { get; private set; } = string.Empty;
-        public ICollection<Product>? Products { get; private set; }
+        public ICollection<Product> Products { get; private set; } = null!;
+
+        public Category() { }
 
         public Category(string name)
         {
             ValidateDomain(name);
         }
 
-        public Category(int id, string name)
+        public Category(int id, string name) : base(id)
         {
-            DomainExceptionValidation.When(id < 0, "Invalid Id value");
+            DomainExceptionValidation.When(id < 1, "Invalid Id value");
 
-            Id = id;
             ValidateDomain(name);
         }
 

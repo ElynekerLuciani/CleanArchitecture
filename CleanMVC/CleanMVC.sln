@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.Domain", "CleanMVC.Domain\CleanMVC.Domain.csproj", "{618398A3-00E2-4DCF-A10A-47A40FDBC03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanMVC.Domain", "CleanMVC.Domain\CleanMVC.Domain.csproj", "{618398A3-00E2-4DCF-A10A-47A40FDBC03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.Application", "CleanMVC.Application\CleanMVC.Application.csproj", "{AA59CB85-19AF-46BD-9FB3-15BA087FED33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanMVC.Application", "CleanMVC.Application\CleanMVC.Application.csproj", "{AA59CB85-19AF-46BD-9FB3-15BA087FED33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.Infra.Data", "CleanMVC.Infra.Data\CleanMVC.Infra.Data.csproj", "{077CD849-B6EB-48C3-BF6F-3383362B0B4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanMVC.Infra.Data", "CleanMVC.Infra.Data\CleanMVC.Infra.Data.csproj", "{077CD849-B6EB-48C3-BF6F-3383362B0B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.InversionOfControl", "CleanMVC.InversionOfControl\CleanMVC.InversionOfControl.csproj", "{3CD241FB-2C6A-4F53-A33F-E1D476F05EEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanMVC.InversionOfControl", "CleanMVC.InversionOfControl\CleanMVC.InversionOfControl.csproj", "{3CD241FB-2C6A-4F53-A33F-E1D476F05EEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.WebUI", "CleanMVC.WebUI\CleanMVC.WebUI.csproj", "{B65A44DF-354D-4888-9E6D-3D33398DF8E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanMVC.WebUI", "CleanMVC.WebUI\CleanMVC.WebUI.csproj", "{B65A44DF-354D-4888-9E6D-3D33398DF8E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanMVC.Domain.Tests", "CleanMVC.Domain.Tests\CleanMVC.Domain.Tests.csproj", "{BF0F44BD-84C6-4863-A217-11742131B2C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B65A44DF-354D-4888-9E6D-3D33398DF8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B65A44DF-354D-4888-9E6D-3D33398DF8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B65A44DF-354D-4888-9E6D-3D33398DF8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0F44BD-84C6-4863-A217-11742131B2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0F44BD-84C6-4863-A217-11742131B2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0F44BD-84C6-4863-A217-11742131B2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0F44BD-84C6-4863-A217-11742131B2C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
