@@ -8,7 +8,7 @@ namespace CleanMVC.Domain.Entities
         public string Description { get; private set; } = string.Empty;
         public decimal Price { get; private set; }
         public int Stock { get; private set; }
-        public string Image { get; private set; } = string.Empty;
+        public string? Image { get; private set; } = string.Empty;
         public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;
 
@@ -33,7 +33,7 @@ namespace CleanMVC.Domain.Entities
             DomainExceptionValidation.When(price < 0, "Invalid price value");
             DomainExceptionValidation.When(stock < 0, "Invalid stock value");
             DomainExceptionValidation.When(Id < 1, "Invalid Id value");
-            DomainExceptionValidation.When(image.Length > 250, "Invalid image. Maximum 250 characters");
+            DomainExceptionValidation.When(image?.Length > 250, "Invalid image. Maximum 250 characters");
 
             Name = name;
             Description = description;

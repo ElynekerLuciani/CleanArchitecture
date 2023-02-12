@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanMVC.Application\CleanMVC.Application.csproj" />
-    <ProjectReference Include="..\CleanMVC.Domain\CleanMVC.Domain.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CleanMVC.Infra.Data\CleanMVC.Infra.Data.csproj" />
   </ItemGroup>
 
