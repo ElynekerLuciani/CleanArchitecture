@@ -1,4 +1,7 @@
-﻿using CleanMVC.Domain.Interfaces;
+﻿using CleanMVC.Application.Interfaces;
+using CleanMVC.Application.Mappings;
+using CleanMVC.Application.Services;
+using CleanMVC.Domain.Interfaces;
 using CleanMVC.Infra.Data.Context;
 using CleanMVC.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +29,10 @@ namespace CleanMVC.InversionOfControl
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
 
