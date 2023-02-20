@@ -23,7 +23,10 @@ namespace CleanMVC.Infra.Data.Repositories
 
         public async Task<Product> GetByIdAsync(int id)
         {
-            return await _productContext.Products.FirstAsync(p => p.Id == id);
+            //Adaptando para estudo de CQRS
+            //return await _productContext.Products.FirstAsync(p => p.Id == id);
+
+            return await _productContext.Products.Include(c => c.Category).SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetProductAsync()
@@ -31,11 +34,12 @@ namespace CleanMVC.Infra.Data.Repositories
             return await _productContext.Products.ToListAsync();
         }
 
-        public async Task<Product> GetProductCategoryAsync(int id)
-        {
-            return await _productContext.Products.Include(c => c.Category).SingleOrDefaultAsync(p => p.Id == id);
+        //Adaptando para estudo de CQRS
+        //public async Task<Product> GetProductCategoryAsync(int id)
+        //{
+        //    return await _productContext.Products.Include(c => c.Category).SingleOrDefaultAsync(p => p.Id == id);
         
-    }
+        //}
 
         public async Task<Product> RemoveAsync(Product product)
         {

@@ -6,7 +6,9 @@ namespace CleanMVC.Domain.Interfaces
     {
         Task<IEnumerable<Product>> GetProductAsync();
         Task<Product> GetByIdAsync(int id);
-        Task<Product> GetProductCategoryAsync(int id);
+        
+        //Adaptando para o estudo de CQRS
+        //Task<Product> GetProductCategoryAsync(int id);
         Task<Product> CreateAsync(Product product);
         Task<Product> UpdateAsync(Product product);
         Task<Product> RemoveAsync(Product product);

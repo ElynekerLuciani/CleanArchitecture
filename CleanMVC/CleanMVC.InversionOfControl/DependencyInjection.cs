@@ -7,6 +7,7 @@ using CleanMVC.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MediatR;
 
 namespace CleanMVC.InversionOfControl
 {
@@ -21,6 +22,7 @@ namespace CleanMVC.InversionOfControl
                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)
                ));
 
+            //Alternativa para banco de dados SQLServer
             //services.AddDbContext<ApplicationDbContext>(
             //    options => options.UseSqlServer(
             //        configuration.GetConnectionString("DefaultConnection"), 
@@ -33,6 +35,11 @@ namespace CleanMVC.InversionOfControl
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+            //Adaptando para estudo de CQRS
+            var myHandlers = AppDomain.CurrentDomain.Load("CleanMVC.Application");
+
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(myHandlers));
 
             return services;
 
