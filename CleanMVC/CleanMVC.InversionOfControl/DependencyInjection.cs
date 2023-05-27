@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
+using CleanMVC.Infra.Data.Identity;
+using Microsoft.AspNetCore.Identity;
+using CleanMVC.Domain.Account;
 
 namespace CleanMVC.InversionOfControl
 {
@@ -22,6 +25,10 @@ namespace CleanMVC.InversionOfControl
                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)
                ));
 
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/Account/Login");
+
             //Alternativa para banco de dados SQLServer
             //services.AddDbContext<ApplicationDbContext>(
             //    options => options.UseSqlServer(
@@ -34,6 +41,10 @@ namespace CleanMVC.InversionOfControl
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
+
+            services.AddScoped<IAuthenticate, AuthenticateService>();
+            services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             //Adaptando para estudo de CQRS
