@@ -26,7 +26,10 @@
 
 //app.Run();
 
+using CleanMVC.Domain.Account;
+using CleanMVC.InversionOfControl;
 using CleanMVC.WebUI;
+using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 

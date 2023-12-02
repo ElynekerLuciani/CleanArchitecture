@@ -1,4 +1,5 @@
-﻿using CleanMVC.InversionOfControl;
+﻿using CleanMVC.Domain.Account;
+using CleanMVC.InversionOfControl;
 
 namespace CleanMVC.WebUI
 {
@@ -17,7 +18,7 @@ namespace CleanMVC.WebUI
             services.AddControllersWithViews();
         }
 
-        public void Configure(WebApplication app, IWebHostEnvironment environment)
+        public void Configure(WebApplication app, IWebHostEnvironment environment, ISeedUserRoleInitial seedUserRoleInitial)
         {
             if (!app.Environment.IsDevelopment())
             {
@@ -30,6 +31,11 @@ namespace CleanMVC.WebUI
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            seedUserRoleInitial.SeedRoles();
+            seedUserRoleInitial.SeedUsers();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
